@@ -6,7 +6,7 @@ while True:
         case 0:
             break
         case 1:
-            import ex1v
+            import exercicios2.ex1v as ex1v
             ex1v
             os.system("pause")
         case 2:
