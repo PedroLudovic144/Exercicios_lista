@@ -36,13 +36,13 @@ while True:
         case 0:
             break
         case 1:
-            print(f"Primeiro elemento: {primeiro_elemento(v)}")
+            print(mostra_elemento(v))
         case 2:
-            exibe_negativos(v)
+            print(mostra_negativo(v))
         case 3:
-            ...
+            print(soma_vetor(x))
         case 4:
-            ...
+            print(media_vetor(x))
         case 5:
             ...
     input("Digite algo para continuar . . .")
