@@ -1,5 +1,5 @@
-def busca(vetor, valor):
-    if valor in vetor:
+def busca(v, valor):
+    if valor in v:
         return True
     else:
         return False
