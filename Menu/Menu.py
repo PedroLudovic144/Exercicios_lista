@@ -1,8 +1,13 @@
+import os
+
+os.system("cls")
+
 from subalgoritmos import *
 
-import os
+v = [45, -89, 32, -12, 33]
+v1 = [41, 72, 39, 4, 35]
+v2 = [0, 0, 0, 0, 0]
 while True:
-    os.system("cls")
     print(""" 
     0. S A I R
     1. Primeiro elemento do vetor. 
@@ -24,6 +29,7 @@ while True:
     17.Maior elemento que retorne o elemento de maior valor do vetor.
 
     """)
+
     opcao = input("Escolha: ")
     if not opcao.isnumeric():
         input("Opção inválida!\nPressione alguma tecla para continuar . . .")
@@ -33,38 +39,54 @@ while True:
         case 0:
             break
         case 1:
-            print(mostra_elemento(v))
-        case 2:
-            print(mostra_negativo(v))
-        case 3:
-            print(soma_vetor(x))
-        case 4:
-            print(media_vetor(x))
-        case 5:
-            print(impares_vetor(v))
-        case 6:
-             print(exibe_extremos(v))
-        case 7:
-            print(exibe_indice_impar(v))
-        case 8:
-            print(busca(v,valor=32))
-        case 9:
-            print(ordena(v))
-        case 10:
-            print(copia_vetor(v1, v2))
-        case 11:
-            print(inverte_vetor(v1, v2))
-        case 12:
-            print(ordena_vetor_crescente(v))
-        case 13:
-            print(ordena_vetor_decrescente(v))
-        case 14:
-            print(ordena_vetor(v1, v2))
-        case 15:
-            print(separa_pares_impares(v))
-        case 16:
-            print(conta_acima_media(v))
-        case 17:
-            print(maior_elemento(v))
+            print(primeiroElemento(v))
 
-    input("Digite algo para continuar . . .")
+        case 2:
+            print(numerosNegativos(v))
+
+        case 3:
+            print(soma_elementos(v))
+
+        case 4:
+            print(mediav(v))
+
+        case 5:
+            print(numerosImpares(v))
+
+        case 6:
+            print(exibeExtremos(v))
+
+        case 7:
+            print(IndiceImpar(v))
+
+        case 8:
+            print(busca(v))
+
+        case 9:
+            print(ordenav(v))
+
+        case 10:
+            print(copiavetor(v1, v2))
+
+        case 11:
+            print(invertevetor(v1, v2))
+
+        case 12:
+            print(ordenavetorCrescente(v1))
+
+        case 13:
+            print(ordenavDecrescente(v1))
+
+        case 14:
+            print(ordena_vetor(v1, 'C'))
+
+        case 15:
+            print(separaParesImpares(v1))
+
+        case 16:
+            print(contaAcimaMedia(v1))
+
+        case 17:
+            print(maior_elemento(v1))
+        case _:
+            print("\n-----Insira uma opção válida!-----") 
