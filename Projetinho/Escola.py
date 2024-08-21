@@ -39,7 +39,6 @@ def editar_aluno(d: dict) -> None:
     elif escolha == 'nota':
         nova_nota_str = input("Escreva a nova nota do aluno: ").strip()
         
-        # Validação da nota para garantir que seja um número válido
         if nova_nota_str.replace('.', '', 1).isdigit() and nova_nota_str.count('.') <= 1:
             nova_nota = float(nova_nota_str)
             d['nota'] = nova_nota
@@ -70,13 +69,13 @@ def consulta_aluno(d: dict) -> dict:
     while True:
         aluno_cons = input("Digite o nome do aluno a ser consultado: ")
         if aluno_cons in d:
-            resultado = {aluno_cons: d[aluno_cons]}  # Retorna o nome e a nota do aluno como um dicionário
+            resultado = {aluno_cons: d[aluno_cons]} 
             print(resultado)
             return resultado
         else:
             print("Esse aluno não existe, digite novamente.")
 
 def apaga_geral(d: dict) -> None:
-    d.clear()  # Apaga todos os itens do dicionário
+    d.clear()  
 
 
