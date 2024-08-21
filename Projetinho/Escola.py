@@ -1,21 +1,35 @@
 alunos = {}
 
 def adicionar_aluno(d: dict) -> None:
-    nome = input("Coloque o nome do aluno: ").strip()
-    while True:
-        nota_str = input("Coloque a nota do aluno (0 a 10): ").strip()
+    while len(d) < 10:
+        nome = input("Coloque o nome do aluno: ").strip()
+        if not nome:
+            print("Nome não pode ser vazio.")
+            continue
+        
+        while True:
+            nota_str = input("Coloque a nota do aluno (0 a 10): ").strip()
 
-        if nota_str.replace('.', '', 1).isdigit() and nota_str.count('.') <= 1:
-            nota = float(nota_str)
-            
-            if 0 <= nota <= 10:
-                d[nome] = nota
-                break
+            if nota_str.replace('.', '', 1).isdigit() and nota_str.count('.') <= 1:
+                nota = float(nota_str)
+
+                if 0 <= nota <= 10:
+                    d[nome] = nota
+                    break
+                else:
+                    print("Nota inválida. A nota deve estar entre 0 e 10.")
             else:
-                print("Nota inválida. A nota deve estar entre 0 e 10.")
+                print("Entrada inválida. Por favor, insira um número válido.")
+        
+        if len(d) < 10:
+            continuar = input("Deseja adicionar outro aluno? (s/n): ").strip().lower()
+            if continuar != 's':
+                break
         else:
-            print("Entrada inválida. Por favor, insira um número válido.")
+            print("Limite de 10 alunos atingido.")
+            break
 
+    
 def editar_aluno(d: dict) -> None:
     escolha = input("O que você quer mudar (nome ou nota): ").strip()
     
@@ -52,9 +66,17 @@ def calcula_media(d: dict) -> float:
     print(f"A média dos alunos é: {media:.2f}")  
     return media  
 
+def consulta_aluno(d: dict) -> dict:
+    while True:
+        aluno_cons = input("Digite o nome do aluno a ser consultado: ")
+        if aluno_cons in d:
+            resultado = {aluno_cons: d[aluno_cons]}  # Retorna o nome e a nota do aluno como um dicionário
+            print(resultado)
+            return resultado
+        else:
+            print("Esse aluno não existe, digite novamente.")
 
-adicionar_aluno(alunos)
-adicionar_aluno(alunos)
-adicionar_aluno(alunos)
-listar_alunos(alunos)
-calcula_media(alunos)
+def apaga_geral(d: dict) -> None:
+    d.clear()  # Apaga todos os itens do dicionário
+
+
