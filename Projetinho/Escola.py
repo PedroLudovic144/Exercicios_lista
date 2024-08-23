@@ -77,5 +77,6 @@ def consulta_aluno(d: dict) -> dict:
 
 def apaga_geral(d: dict) -> None:
     d.clear()  
+    return print("Alunos apagados")
 
 
