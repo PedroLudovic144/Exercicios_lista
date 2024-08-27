@@ -2,7 +2,7 @@ alunos = {}
 
 def adicionar_aluno(d: dict) -> None:
     while len(d) < 10:
-        nome = input("Coloque o nome do aluno: ").strip()
+        nome = input("Coloque o nome do aluno: ").strip().title()
         if not nome:
             print("Nome não pode ser vazio.")
             continue
@@ -67,10 +67,9 @@ def calcula_media(d: dict) -> float:
 
 def consulta_aluno(d: dict) -> dict:
     while True:
-        aluno_cons = input("Digite o nome do aluno a ser consultado: ")
+        aluno_cons = input("Digite o nome do aluno a ser consultado: ").strip().title()
         if aluno_cons in d:
             resultado = {aluno_cons: d[aluno_cons]} 
-            print(resultado)
             return resultado
         else:
             print("Esse aluno não existe, digite novamente.")
